@@ -36,6 +36,12 @@ namespace OsuOszExtractor
             //Extract all zip files
             foreach (var path in files)
             {
+                var extension = Path.GetExtension(path);
+                if (extension != ".osz")
+                {
+                    continue;
+                }
+                Path.GetExtension(path);
                 Console.ResetColor();
                 string fileName = Path.GetFileNameWithoutExtension(path);
                 string outputPath = songsDir + "\\" + fileName;
